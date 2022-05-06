@@ -68,12 +68,17 @@ def start(weather, pick):
   global auto
   if pick[0].lower() == "a":
     auto = True
-  if weather[0].lower() == "g":
-    potsOut = pots
-    potsIn = 0
-  else: 
-    potsIn = pots
-    potsOut = 0
+    if weather[0].lower() == "g":
+      potsOut = pots
+      potsIn = 0
+    else: 
+      potsIn = pots
+      potsOut = 0
+  else:
+    print("you have ", pots, " pots")
+    potsIn = int(input("How many pots in... "))
+    potsOut = int(input("How many pots out... "))
+
 start(input("starting weather (G)ood or (B)ad... "), input("do you want to pick if the pots in and out (A)uto or (M)anual... "))
 
 round = 0
